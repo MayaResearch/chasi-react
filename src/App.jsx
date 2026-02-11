@@ -13,7 +13,7 @@ function App() {
         <div className="nav-inner">
           <a href="/" className="nav-logo">
             <img 
-              src="https://framerusercontent.com/images/q3hqwrydzmMhwOvIJzLPserLv5I.svg" 
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%233b82f6'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='sans-serif' font-size='22' font-weight='bold'%3EC%3C/text%3E%3C/svg%3E" 
               alt="Chasi AI" 
             />
             <span>Chasi</span>
@@ -218,7 +218,7 @@ function App() {
             <div className="footer-brand">
               <a href="/" className="footer-logo">
                 <img 
-                  src="https://framerusercontent.com/images/q3hqwrydzmMhwOvIJzLPserLv5I.svg" 
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%233b82f6'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='sans-serif' font-size='22' font-weight='bold'%3EC%3C/text%3E%3C/svg%3E" 
                   alt="Chasi AI" 
                 />
                 <span>Chasi</span>
