@@ -1,11 +1,26 @@
 import { useState } from 'react';
 import { ArrowRight, Menu, X, ChevronDown } from 'lucide-react';
 
+function ComingSoonModal({ isOpen, onClose }) {
+  if (!isOpen) return null;
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+        <h2>Coming Soon</h2>
+        <p>We're currently in beta and will be releasing soon. Stay tuned for updates!</p>
+        <button className="btn btn-primary" onClick={onClose}>Got it</button>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="app">
+      <ComingSoonModal isOpen={showModal} onClose={() => setShowModal(false)} />
       {/* Navigation */}
       <header className="nav">
         <div className="nav-inner">
@@ -22,11 +37,8 @@ function App() {
             <a href="#about">About</a>
           </nav>
           <div className="nav-actions">
-            <a href="/login" className="nav-link">Log in</a>
-            <button className="btn btn-primary">
-              Request Demo
-              <ArrowRight size={16} />
-            </button>
+            <button className="nav-link" onClick={() => setShowModal(true)}>Log in</button>
+            <button className="btn btn-primary" onClick={() => setShowModal(true)}>Request Demo<ArrowRight size={16} /></button>
           </div>
           <button 
             className="nav-mobile-toggle"
@@ -43,11 +55,8 @@ function App() {
             <a href="#product">Product</a>
             <a href="#solutions">Solutions</a>
             <a href="#about">About</a>
-            <a href="/login">Log in</a>
-            <button className="btn btn-primary btn-full">
-              Request Demo
-              <ArrowRight size={16} />
-            </button>
+            <a href="#" onClick={(e) => { e.preventDefault(); setShowModal(true); }}>Log in</a>
+            <button className="btn btn-primary btn-full" onClick={() => setShowModal(true)}>Request Demo<ArrowRight size={16} /></button>
           </div>
         )}
       </header>
@@ -78,13 +87,8 @@ function App() {
 
           {/* CTA Buttons */}
           <div className="hero-cta">
-            <button className="btn btn-primary btn-lg">
-              Request Demo
-              <ArrowRight size={20} />
-            </button>
-            <button className="btn btn-outline btn-lg">
-              Learn More
-            </button>
+            <button className="btn btn-primary btn-lg" onClick={() => setShowModal(true)}>Request Demo<ArrowRight size={20} /></button>
+            <button className="btn btn-outline btn-lg" onClick={() => setShowModal(true)}>Learn More</button>
           </div>
         </div>
       </section>
@@ -211,13 +215,8 @@ function App() {
           <h2>Ready to transform your operations?</h2>
           <p>Join leading industrial companies using Chasi AI to automate commerce.</p>
           <div className="cta-buttons">
-            <button className="btn btn-white btn-lg">
-              Request Demo
-              <ArrowRight size={20} />
-            </button>
-            <button className="btn btn-outline-white btn-lg">
-              Contact Sales
-            </button>
+            <button className="btn btn-white btn-lg" onClick={() => setShowModal(true)}>Request Demo<ArrowRight size={20} /></button>
+            <button className="btn btn-outline-white btn-lg" onClick={() => setShowModal(true)}>Contact Sales</button>
           </div>
         </div>
       </section>
